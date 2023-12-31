@@ -76,7 +76,7 @@ mod tests {
     #[test]
     fn test_ray_intersect_scale() {
         let r = ray::Ray::new(Tuple::point(0., 0., -5.), Tuple::vector(0., 0., 1.));
-        let s = Object::Sphere(Matrix::identity());
+        let s = Object::sphere();
         let s = transform(&s, &Matrix::scale(2., 2., 2.));
         let mut xs = intersect(&r, &s);
         assert_eq!(xs.len(), 2);
@@ -86,7 +86,7 @@ mod tests {
     #[test]
     fn test_ray_intersect_translate() {
         let r = ray::Ray::new(Tuple::point(0., 0., -5.), Tuple::vector(0., 0., 1.));
-        let s = Object::Sphere(Matrix::identity());
+        let s = Object::sphere();
         let s = transform(&s, &Matrix::translation(5., 0., 0.));
         let xs = intersect(&r, &s);
         assert_eq!(xs.len(), 0);

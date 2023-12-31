@@ -31,7 +31,7 @@ impl Tuple {
         self.w == 0f64
     }
     pub fn to_vector(&mut self) {
-            self.w=0.;
+        self.w = 0.;
     }
     pub fn magnitude(&self) -> f64 {
         f64::sqrt(self.x * self.x + self.y * self.y + self.z * self.z + self.w * self.w)

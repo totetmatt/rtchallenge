@@ -1,17 +1,16 @@
-use crate::tuple::Tuple;
 use crate::color::Color;
-pub struct Point_Light{
-    intensity:Color,
-    position:Tuple
+use crate::tuple::Tuple;
+pub struct Point_Light {
+    pub intensity: Color,
+    pub position: Tuple,
 }
 impl Point_Light {
-    pub fn new(intensity:Color, position:Tuple) -> Self{
+    pub fn new(intensity: Color, position: Tuple) -> Self {
         Point_Light {
             intensity,
-            position
+            position,
         }
-
-    } 
+    }
 }
 #[cfg(test)]
 mod tests {
@@ -25,8 +24,8 @@ mod tests {
         let i = Color::new(1., 1., 1.);
         let p = Tuple::point(0., 0., 0.);
 
-        let pl = Point_Light::new(i,p);
+        let pl = Point_Light::new(i, p);
         assert_eq!(pl.intensity, Color::new(1., 1., 1.));
-        assert_eq!(pl.position,Tuple::point(0., 0., 0.))
+        assert_eq!(pl.position, Tuple::point(0., 0., 0.))
     }
 }
